@@ -7,6 +7,7 @@ import Home from '../Page/Home/Home';
 import Login from '../Page/Login/Login';
 import Blog from '../Page/Blog/Blog';
 import Registration from '../Page/Registration/Registration';
+import Error from '../Page/SharePage/Error';
 
 export const router = createBrowserRouter([
     {
@@ -23,7 +24,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/courses',
-                element: <Courses></Courses>
+                element: <Courses></Courses>,
+                loader: ()=> fetch('http://localhost:5000/courses')
             },
             {
                 path: '/faq',
@@ -46,5 +48,9 @@ export const router = createBrowserRouter([
                 element: <Login></Login>
             },
         ]
+    },
+    {
+        path:'/*',
+        element:<Error></Error>
     }
 ])
