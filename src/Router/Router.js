@@ -8,6 +8,8 @@ import Login from '../Page/Login/Login';
 import Blog from '../Page/Blog/Blog';
 import Registration from '../Page/Registration/Registration';
 import Error from '../Page/SharePage/Error';
+import CourseDetails from '../Page/Courses/CourseDetails/CourseDetails';
+import Test from './Test';
 
 export const router = createBrowserRouter([
     {
@@ -36,8 +38,9 @@ export const router = createBrowserRouter([
                 element: <Blog></Blog>
             },
             {
-                path: '/home',
-                element: <Home></Home>
+                path: '/course/:id',
+                element: <CourseDetails></CourseDetails>,
+                loader: ({params})=> fetch(`http://localhost:5000/courses/${params.id}`)
             },
             {
                 path: '/registration',
@@ -46,6 +49,11 @@ export const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+        
+            {
+                path: '/test',
+                element: <Test></Test>
             },
         ]
     },
