@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 const Registration = () => {
     return (
         <>
-              <div className=" h-auto lg:h-screen bg-base-200 flex flex-col gap-10 justify-center items-center ">
-                <h1 className="text-5xl font-bold">Registration</h1>
-                <div className="card flex-shrink-0 w-[90%] md:w-[60%] lg:w-[30%]  bg-base-100 shadow-xl ">
+              <div className=" h-auto  bg-base-200 flex flex-col gap-10 justify-center items-center py-4 ">
+                <h1 className="text-5xl font-bold ">Registration</h1>
+                <div className="card flex-shrink-0 w-[90%] md:w-[60%] lg:w-[35%]  bg-base-100 shadow-xl  ">
                     <div className="card-body">
                         <div className="form-control">
                             <label className="label">
