@@ -9,7 +9,7 @@ const auth = getAuth(app)
 const UserContext = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loader, setLoader] = useState(true)
-
+    const [dark, setDark] = useState(false)
     const createUser = (email, password) => {
         setLoader(true)
         return createUserWithEmailAndPassword(auth, email, password)
@@ -52,7 +52,9 @@ const UserContext = ({ children }) => {
         emailVerify,
         logout,
         loader,
-        setLoader
+        setLoader,
+        dark,
+        setDark
     };
 
     return (
