@@ -2,11 +2,13 @@ import React from 'react';
 import { FaRegClock } from "react-icons/fa";
 import { ImBooks } from "react-icons/im";
 import { Link } from 'react-router-dom';
+
 const CourseCard = ({ course }) => {
     const {id, name, img, description, time, Price, video } = course
+
     return (
         <div>
-            <div className="card card-compact w-80 lg:w-96  bg-base-100 shadow-xl">
+            <div className='card card-compact w-80 lg:w-96 shadow-xl '>
                 <figure><img src={img} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}

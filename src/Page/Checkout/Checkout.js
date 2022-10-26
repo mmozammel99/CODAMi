@@ -6,60 +6,59 @@ import { AuthContext } from '../../Context/UserContext';
 
 
 const Checkout = () => {
-    const { user } = useContext(AuthContext)
+    const { user, dark } = useContext(AuthContext)
     const course = useLoaderData()
-    const { name, img, description, Price ,logo} = course
+    const { name, img, description, Price, logo } = course
 
-    const handleBuy =()=>{
+    const handleBuy = () => {
         toast.custom((t) => (
             <div
-              className={`${
-                t.visible ? 'animate-enter' : 'animate-leave'
-              } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+                className={`${t.visible ? 'animate-enter' : 'animate-leave'
+                    } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
             >
-              <div className="flex-1 w-0 p-4">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 pt-0.5">
-                    <img
-                      className="h-10 w-10 rounded-full"
-                      src={logo}
-                      alt=""
-                    />
-                  </div>
-                  <div className="ml-3 flex-1">
-                    <p className="text-sm font-medium text-gray-900">
-                     {name}
-                    </p>
-                    <p className="mt-1 text-sm text-gray-500">
-                     Successfully buy this Course
-                    </p>
-                  </div>
+                <div className="flex-1 w-0 p-4">
+                    <div className="flex items-start">
+                        <div className="flex-shrink-0 pt-0.5">
+                            <img
+                                className="h-10 w-10 rounded-full"
+                                src={logo}
+                                alt=""
+                            />
+                        </div>
+                        <div className="ml-3 flex-1">
+                            <p className="text-sm font-medium text-gray-900">
+                                {name}
+                            </p>
+                            <p className="mt-1 text-sm text-gray-500">
+                                Successfully buy this Course
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div className="flex border-l border-gray-200">
-                <button
-                  onClick={() => toast.dismiss(t.id)}
-                  className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-primary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary"
-                >
-                  Close
-                </button>
-              </div>
+                <div className="flex border-l border-gray-200">
+                    <button
+                        onClick={() => toast.dismiss(t.id)}
+                        className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-primary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                    >
+                        Close
+                    </button>
+                </div>
             </div>
-          ))
+        ))
     }
     return (
         <>
-            <div className="flex justify-center items-center min-h-screen bg-base-200">
-                <div className="flex flex-col lg:flex-row justify-center items-center w-auto shadow-xl bg-white">
+            <div className={`flex justify-center items-center min-h-screen ${dark ? "bg-neutral-focus" : "bg-base-200"} ${dark ? "text-gray-100" : "text-neutral-focus"}`}>
+                <div className={`flex flex-col lg:flex-row justify-center items-center w-auto shadow-xl ${dark ? "bg-neutral" : "bg-base-100"} `}>
 
                     {/* Payment Info */}
 
-                    <div className="lg:card lg:flex-shrink-0 w-[90%] lg:w-auto  bg-base-100">
+                    <div className={`lg:card lg:flex-shrink-0 w-[90%] lg:w-auto  ${dark ? "bg-neutral" : "bg-base-100"} ${dark ? "text-gray-100" : "text-neutral-focus"}`}>
                         <form className="lg:card-body">
                             <h2 className='text-4xl font-bold'>Check Out</h2>
-                            <div className="form-control">
+                            <div className="form-control text-neutral-focus">
                                 <label className="label">
-                                    <span className="label-text">Name</span>
+                                    <span className={`label-text ${dark ? "text-gray-100" : "text-neutral-focus"}`} >Name</span>
                                 </label>
                                 <input type="text" name='name' defaultValue={user?.displayName} readOnly className="input input-bordered" />
                                 <label className="label">
@@ -67,31 +66,31 @@ const Checkout = () => {
                                 </label>
                             </div>
 
-                            <div className="form-control">
+                            <div className="form-control text-neutral-focus">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className={`label-text ${dark ? "text-gray-100" : "text-neutral-focus"}`}>Email</span>
                                 </label>
                                 <input type="email" name='email' defaultValue={user?.email} readOnly className="input input-bordered" />
                             </div>
-                            <div className="form-control">
+                            <div className="form-control text-neutral-focus">
                                 <label className="label">
-                                    <span className="label-text">User Id</span>
+                                    <span className={`label-text ${dark ? "text-gray-100" : "text-neutral-focus"}`}>User Id</span>
                                 </label>
                                 <input type="text" name='uid' defaultValue={user?.uid} readOnly className="input input-bordered" />
                                 <label className="label">
 
                                 </label>
                             </div>
-                            <div className='flex flex-col lg:flex-row gap-2'>
+                            <div className='flex flex-col text-neutral-focus lg:flex-row gap-2'>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Country</span>
+                                        <span className={`label-text ${dark ? "text-gray-100" : "text-neutral-focus"}`}>Country</span>
                                     </label>
                                     <input type="text" defaultValue='Bangladesh' className="input input-bordered" />
                                 </div>
                                 <div className="form-control ">
                                     <label className="label">
-                                        <span className="label-text">Zip cord</span>
+                                        <span className={`label-text ${dark ? "text-gray-100" : "text-neutral-focus"}`}>Zip cord</span>
                                     </label>
                                     <input type="text" defaultValue='1210' className="input input-bordered" />
                                 </div>
@@ -119,7 +118,7 @@ const Checkout = () => {
 
                     {/* Product info */}
 
-                    <div className="card w-96 bg-base-100 justify-center items-center mb-5 ">
+                    <div className={`card w-96 bg-base-100 justify-center items-center mb-5 ${dark ? "bg-neutral" : "bg-base-100"} ${dark ? "text-gray-100" : "text-neutral-focus"}`}>
                         <figure className="px-10 pt-10">
 
                             <figure><img src={img} alt="Movie" /></figure>
@@ -140,8 +139,8 @@ const Checkout = () => {
                                 <span className="btn btn-primary">Apply</span>
                             </label>
                         </div>
-                        <div className="overflow-x-auto">
-                            <table className="table w-full">
+                        <div className="overflow-x-auto ">
+                            <table className="table w-full  text-neutral-focus" >
 
                                 <tbody>
                                     <tr>
@@ -167,7 +166,7 @@ const Checkout = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <button className='btn' onClick={handleBuy}>Buy now</button>
+                        <button className={`btn my-3 ${dark?"btn-primary": ""}`} onClick={handleBuy}>Buy now</button>
                     </div>
                 </div>
             </div>

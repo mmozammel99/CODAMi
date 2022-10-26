@@ -1,17 +1,18 @@
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/UserContext';
 
 
 
 const Blog = () => {
-
+const{dark}=useContext(AuthContext)
     return (
 
        
-            <div className="bg-gray-100">
+            <div className={`${dark ? "bg-neutral-focus":"bg-base-100"} ${dark ? "text-base-200":"text-neutral-focus"}`}>
                 <h2 className="text-5xl font-bold text-center pt-5 mb-5">BLOG</h2>
-                <div className="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm bg-gray-50 mb-10 ">
+                <div className={`container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm ${dark ? "bg-neutral":"bg-base-100"} ${dark ? "text-gray-100":"text-neutral-focus"} mb-10 `}>
                     <div className="flex items-center justify-between">
                         <span className="text-sm text-gray-600">Jun 1, 2023</span>
                         <Link rel="noopener noreferrer" to="#" className="px-2 py-1 font-bold rounded bg-sky-600 text-gray-50">#CORS</Link>
@@ -35,7 +36,7 @@ const Blog = () => {
                     </div>
 
                 </div>
-                <div className="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm bg-gray-50 mb-10">
+                <div className={`container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm ${dark ? "bg-neutral":"bg-base-100"} ${dark ? "text-gray-100":"text-neutral-focus"} mb-10`}>
                     <div className="flex items-center justify-between">
                         <span className="text-sm text-gray-600">Jun 1, 2023</span>
                         <Link rel="noopener noreferrer" to="#" className="px-2 py-1 font-bold rounded bg-yellow-600 text-gray-50">#Firebase</Link>
@@ -73,7 +74,7 @@ const Blog = () => {
                     </div>
 
                 </div>
-                <div className="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm bg-gray-50 mb-10">
+                <div className={`container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm ${dark ? "bg-neutral":"bg-base-100"} ${dark ? "text-gray-100":"text-neutral-focus"} mb-10`}>
                     <div className="flex items-center justify-between">
                         <span className="text-sm text-gray-600">Jun 1, 2023</span>
                         <Link rel="noopener noreferrer" to="#" className="px-2 py-1 font-bold rounded bg-red-600 text-gray-50">#React Route</Link>
@@ -96,7 +97,7 @@ const Blog = () => {
                     </div>
 
                 </div>
-                <div className="container max-w-4xl px-10  py-6 mx-auto rounded-lg shadow-sm bg-gray-50">
+                <div className={`container max-w-4xl px-10  py-6 mx-auto rounded-lg shadow-sm ${dark ? "bg-neutral":"bg-base-100"} ${dark ? "text-gray-100":"text-neutral-focus"}`}>
                     <div className="flex items-center justify-between">
                         <span className="text-sm text-gray-600">Jun 1, 2023</span>
                         <Link rel="noopener noreferrer" to="#" className="px-2 py-1 font-bold rounded bg-green-600 text-gray-50">#Node.js</Link>

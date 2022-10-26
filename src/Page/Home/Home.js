@@ -8,7 +8,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 
 const Home = () => {
-    const { LoginWithProvider } = useContext(AuthContext)
+    const { LoginWithProvider, dark } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
 
@@ -32,7 +32,7 @@ const Home = () => {
     }
     return (
         <>
-            <div className="  min-h-screen bg-base-200 pt-5 ">
+            <div className= {` min-h-screen  pt-5 ${dark ? "bg-neutral-focus":"bg-base-100"} ${dark ? "text-base-200":"text-neutral-focus"}`} >
                 <div className=" flex flex-col-reverse lg:flex-row  text-center justify-center items-center px-20">
                     <img alt='' src={img} className="w-96 lg:w-[40%]  mx-20" />
                     <div className=' '>

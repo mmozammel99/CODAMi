@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaRegClock } from "react-icons/fa";
 import { ImBooks, ImPrinter } from "react-icons/im";
 import Pdf from "react-to-pdf";
+import { AuthContext } from '../../../Context/UserContext';
 
 const ref = React.createRef();
 
@@ -15,10 +16,11 @@ const options = {
 const CourseDetails = () => {
     const course = useLoaderData()
     const { id, name, details, time, video } = course
+    const {dark} =useContext(AuthContext)
     return (
         <>
-            <div className="hero min-h-screen bg-base-200">
-                <div ref={ref} className="hero-content text-center  ">
+            <div className={`hero min-h-screen ${dark ? "bg-neutral-focus":"bg-base-200"} ${dark ? "text-gray-100":"text-neutral-focus"}`} >
+                <div ref={ref} className={`hero-content text-center rounded-xl ${dark ? "bg-neutral":"bg-base-100"} ${dark ? "text-gray-100":"text-neutral-focus"}`}  >
                     <div className="max-w-2xl ">
                         <h1 className="text-5xl font-bold">{name}</h1>
                         <div className="divider"></div>
