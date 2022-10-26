@@ -1,7 +1,8 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
 
 const Registration = () => {
@@ -11,10 +12,16 @@ const Registration = () => {
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
 
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/';
+
     const handleGoogleLogin = () => {
         LoginWithProvider(googleProvider)
             .then(result => {
                 console.log(result);
+                toast.success('Registration Successful')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error);
@@ -24,6 +31,8 @@ const Registration = () => {
         LoginWithProvider(githubProvider)
             .then(result => {
                 console.log(result);
+                toast.success('Registration Successful')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error);
@@ -44,6 +53,8 @@ const Registration = () => {
                 handleProfileInfoAdd(name, photoURL);
                 emailVerify()
                 setError(null)
+                toast.success('Registration Successful')
+                navigate(from, { replace: true })
                 console.log(result.user);
             })
             .catch(error => {

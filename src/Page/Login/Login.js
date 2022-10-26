@@ -1,5 +1,6 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
@@ -18,6 +19,8 @@ const Login = () => {
     const handleGoogleLogin = () => {
         LoginWithProvider(googleProvider)
             .then(result => {
+                 toast.success('Successfully Login!')
+                navigate(from, { replace: true })
                 console.log(result);
             })
             .catch(error => {
@@ -27,6 +30,8 @@ const Login = () => {
     const handleGithubLogin = () => {
         LoginWithProvider(githubProvider)
             .then(result => {
+                toast.success('Successfully Login!')
+                navigate(from, { replace: true })
                 console.log(result);
             })
             .catch(error => {
@@ -45,7 +50,9 @@ const Login = () => {
             .then(result => {
                 setError(null)
                 console.log(result.user);
+                toast.success('Successfully Login!')
                 navigate(from, { replace: true })
+
             })
             .catch(error => {
                 setError(error.message);

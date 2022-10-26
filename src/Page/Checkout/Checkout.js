@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import bg from '../../Assets/Payment-Methods.png'
 import { AuthContext } from '../../Context/UserContext';
@@ -7,8 +8,45 @@ import { AuthContext } from '../../Context/UserContext';
 const Checkout = () => {
     const { user } = useContext(AuthContext)
     const course = useLoaderData()
-    const { name, img, description, Price } = course
+    const { name, img, description, Price ,logo} = course
 
+    const handleBuy =()=>{
+        toast.custom((t) => (
+            <div
+              className={`${
+                t.visible ? 'animate-enter' : 'animate-leave'
+              } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+            >
+              <div className="flex-1 w-0 p-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 pt-0.5">
+                    <img
+                      className="h-10 w-10 rounded-full"
+                      src={logo}
+                      alt=""
+                    />
+                  </div>
+                  <div className="ml-3 flex-1">
+                    <p className="text-sm font-medium text-gray-900">
+                     {name}
+                    </p>
+                    <p className="mt-1 text-sm text-gray-500">
+                     Successfully buy this Course
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex border-l border-gray-200">
+                <button
+                  onClick={() => toast.dismiss(t.id)}
+                  className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-primary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          ))
+    }
     return (
         <>
             <div className="flex justify-center items-center min-h-screen bg-base-200">
@@ -129,7 +167,7 @@ const Checkout = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <button className='btn'>Buy now</button>
+                        <button className='btn' onClick={handleBuy}>Buy now</button>
                     </div>
                 </div>
             </div>
