@@ -31,7 +31,7 @@ const CourseDetails = () => {
                         </div>
 
                         <p className="py-6 text-justify">{details}</p>
-                        <Link to={`/checkout/${id}`} className="btn btn-primary">Get premium access</Link>
+                        <Link to={`/checkout/${id}`} className="btn btn-primary">Get Courses access</Link>
                     </div>
                 </div>
             </div>

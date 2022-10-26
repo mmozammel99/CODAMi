@@ -14,7 +14,7 @@ const Header = () => {
             <div className="navbar bg-base-100 ">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                        <label tabIndex={0} className="btn btn-ghost p-0 lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-semibold">
@@ -27,10 +27,10 @@ const Header = () => {
 
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost normal-case text-3xl tracking-wider lg:pl-10"> <img src={logo} className='w-12 mr-2' alt="" /> CODAMi</Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-3xl tracking-wider p-0 lg:pl-10"> <img src={logo} className='w-12 mr-2 p-0' alt="" /> CODAMi</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal p-0 font-semibold">
+                    <ul className="menu menu-horizontal  font-semibold">
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/courses'>Courses</Link></li>
                         <li><Link to='/faq'>FAQ</Link></li>
@@ -39,7 +39,28 @@ const Header = () => {
 
                     </ul>
                 </div>
-                <div className="navbar-end lg:pr-5">
+                <div className="navbar-end lg:px-5">
+
+                    {
+                        user?.uid ?
+                            <div className="dropdown dropdown-end">
+                                <div className="tooltip tooltip-left" data-tip={user?.displayName}>
+                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-10 rounded-full">
+                                            <img src={user?.photoURL} alt='' />
+                                        </div>
+                                    </label>
+                                </div>
+                                <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                    
+                                    <li><Link to='/profile' >Profile</Link></li>
+                                    <li><button onClick={handleLogout}>Logout</button></li>
+                                </ul>
+
+                            </div>
+                            :
+                            <Link to='/login' className="btn btn-primary">Login</Link>
+                    }
                     <label className="swap swap-rotate px-1 lg:px-3">
 
 
@@ -52,32 +73,6 @@ const Header = () => {
                         <svg className="swap-off fill-current w-7 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" /></svg>
 
                     </label>
-                    {
-                        user?.uid ?
-                            <div className="dropdown dropdown-end">
-                                <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
-                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                        <div className="w-10 rounded-full">
-                                            <img src={user?.photoURL} alt='' />
-                                        </div>
-                                    </label>
-                                    </div>
-                                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li>
-                                            <p className="justify-between">
-                                                {user?.displayName}
-                                                <span className="badge">New</span>
-                                            </p>
-                                        </li>
-                                        <li><Link to='/profile' >Profile</Link></li>
-                                        <li><button onClick={handleLogout}>Logout</button></li>
-                                    </ul>
-                               
-                            </div>
-                            :
-                            <Link to='/login' className="btn btn-primary">Login</Link>
-                    }
-
                 </div>
             </div>
 
