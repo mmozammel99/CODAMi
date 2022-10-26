@@ -11,6 +11,7 @@ import Error from '../Page/SharePage/Error';
 import CourseDetails from '../Page/Courses/CourseDetails/CourseDetails';
 import Checkout from '../Page/Checkout/Checkout';
 import PrivetRouter from './PrivetRouter/PrivetRouter';
+import Profile from '../Page/Profile/Profile';
 
 export const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/profile',
+                element: <PrivetRouter><Profile></Profile></PrivetRouter>
             },
         
             {
