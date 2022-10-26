@@ -10,6 +10,7 @@ import Registration from '../Page/Registration/Registration';
 import Error from '../Page/SharePage/Error';
 import CourseDetails from '../Page/Courses/CourseDetails/CourseDetails';
 import Checkout from '../Page/Checkout/Checkout';
+import PrivetRouter from './PrivetRouter/PrivetRouter';
 
 export const router = createBrowserRouter([
     {
@@ -53,7 +54,7 @@ export const router = createBrowserRouter([
         
             {
                 path: '/checkout/:id',
-                element: <Checkout ></Checkout>,
+                element:<PrivetRouter> <Checkout ></Checkout></PrivetRouter>,
                 loader: ({params})=> fetch(`http://localhost:5000/courses/${params.id}`)
             },
         ]

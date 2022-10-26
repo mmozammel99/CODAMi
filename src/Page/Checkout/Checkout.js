@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import bg from '../../Assets/Payment-Methods.png'
+import { AuthContext } from '../../Context/UserContext';
+
+
 const Checkout = () => {
+    const { user } = useContext(AuthContext)
     const course = useLoaderData()
     const { name, img, description, Price } = course
+
     return (
         <>
             <div className="flex justify-center items-center min-h-screen bg-base-200">
@@ -12,13 +17,13 @@ const Checkout = () => {
                     {/* Payment Info */}
 
                     <div className="lg:card lg:flex-shrink-0 w-[90%] lg:w-auto  bg-base-100">
-                        <div className="lg:card-body">
+                        <form className="lg:card-body">
                             <h2 className='text-4xl font-bold'>Check Out</h2>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" className="input input-bordered" />
+                                <input type="text" name='name' defaultValue={user?.displayName} readOnly className="input input-bordered" />
                                 <label className="label">
 
                                 </label>
@@ -28,13 +33,13 @@ const Checkout = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" className="input input-bordered" />
+                                <input type="email" name='email' defaultValue={user?.email} readOnly className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">User Id</span>
                                 </label>
-                                <input type="text" className="input input-bordered" />
+                                <input type="text" name='uid' defaultValue={user?.uid} readOnly className="input input-bordered" />
                                 <label className="label">
 
                                 </label>
@@ -44,13 +49,13 @@ const Checkout = () => {
                                     <label className="label">
                                         <span className="label-text">Country</span>
                                     </label>
-                                    <input type="text" className="input input-bordered" />
+                                    <input type="text" defaultValue='Bangladesh' className="input input-bordered" />
                                 </div>
-                                <div className="form-control">
+                                <div className="form-control ">
                                     <label className="label">
                                         <span className="label-text">Zip cord</span>
                                     </label>
-                                    <input type="text" className="input input-bordered" />
+                                    <input type="text" defaultValue='1210' className="input input-bordered" />
                                 </div>
                             </div>
                             {/* payment method info */}
@@ -71,7 +76,7 @@ const Checkout = () => {
                                 </div>
                             </div>
                             <p><input type="checkbox" className="checkbox checkbox-xs mt-3" /> Remember this card</p>
-                        </div>
+                        </form>
                     </div>
 
                     {/* Product info */}
@@ -85,7 +90,7 @@ const Checkout = () => {
                             <h2 className="card-title">{name}</h2>
                             <p className='text-justify'>{description}</p>
                             <div className="card-actions">
-                                <button className='btn btn-primary w-full'><input type="radio" className="radio radio-primary btn-outline mr-1" checked />Price only {Price}</button>
+                                <button className='btn btn-outline btn-primary w-full'><input type="radio" className="radio radio-primary  mr-1" checked />Price only {Price}</button>
                             </div>
                         </div>
 
@@ -94,7 +99,7 @@ const Checkout = () => {
 
                             <label className="input-group">
                                 <input type="text" placeholder="Voucher Code" className="input input-bordered" />
-                                <span className="btn btn-secondary">Apply</span>
+                                <span className="btn btn-primary">Apply</span>
                             </label>
                         </div>
                         <div className="overflow-x-auto">
@@ -103,18 +108,22 @@ const Checkout = () => {
                                 <tbody>
                                     <tr>
                                         <td>Course Price </td>
+                                        <td>+</td>
                                         <td> {Price}</td>
                                     </tr>
                                     <tr>
                                         <td>Tax </td>
+                                        <td>+</td>
                                         <td> 0</td>
                                     </tr>
                                     <tr>
                                         <td>Voucher </td>
+                                        <td>-</td>
                                         <td> 0</td>
                                     </tr>
                                     <tr>
                                         <th>Total </th>
+                                        <td> = </td>
                                         <th> {Price}</th>
                                     </tr>
                                 </tbody>

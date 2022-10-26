@@ -18,7 +18,7 @@ const CourseDetails = () => {
     return (
         <>
             <div className="hero min-h-screen bg-base-200">
-                <div ref={ref} className="hero-content text-center">
+                <div ref={ref} className="hero-content text-center  ">
                     <div className="max-w-2xl ">
                         <h1 className="text-5xl font-bold">{name}</h1>
                         <div className="divider"></div>
@@ -31,7 +31,7 @@ const CourseDetails = () => {
                         </div>
 
                         <p className="py-6 text-justify">{details}</p>
-                        <Link to={`/checkout/${id}`} className="btn btn-secondary">Get premium access</Link>
+                        <Link to={`/checkout/${id}`} className="btn btn-primary">Get premium access</Link>
                     </div>
                 </div>
             </div>
