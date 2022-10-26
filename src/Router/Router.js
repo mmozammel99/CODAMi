@@ -9,7 +9,7 @@ import Blog from '../Page/Blog/Blog';
 import Registration from '../Page/Registration/Registration';
 import Error from '../Page/SharePage/Error';
 import CourseDetails from '../Page/Courses/CourseDetails/CourseDetails';
-import Test from './Test';
+import Checkout from '../Page/Checkout/Checkout';
 
 export const router = createBrowserRouter([
     {
@@ -52,8 +52,9 @@ export const router = createBrowserRouter([
             },
         
             {
-                path: '/test',
-                element: <Test></Test>
+                path: '/checkout/:id',
+                element: <Checkout ></Checkout>,
+                loader: ({params})=> fetch(`http://localhost:5000/courses/${params.id}`)
             },
         ]
     },

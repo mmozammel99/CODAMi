@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { FaRegClock } from "react-icons/fa";
 import { ImBooks ,ImPrinter} from "react-icons/im";
 import Pdf from "react-to-pdf";
@@ -15,7 +15,7 @@ const options = {
 const CourseDetails = () => {
     const course = useLoaderData()
     console.log(course);
-    const { id, name, img, details, time, Price, video } = course
+    const { id, name, details, time,  video } = course
     return (
         <>
             <div  className="hero min-h-screen bg-base-200">
@@ -32,7 +32,7 @@ const CourseDetails = () => {
                         </div>
 
                         <p  className="py-6 text-justify">{details}</p>
-                        <button className="btn btn-primary">Get Started</button>
+                        <Link to={`/checkout/${id}`} className="btn btn-secondary">Get premium access</Link>
                     </div>
                 </div>
             </div>
