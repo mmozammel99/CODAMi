@@ -3,14 +3,17 @@ import { useLoaderData } from 'react-router-dom';
 import bg from '../../Assets/Payment-Methods.png'
 const Checkout = () => {
     const course = useLoaderData()
-    const { id, name, img, description, Price } = course
+    const { name, img, description, Price } = course
     return (
         <>
             <div className="flex justify-center items-center min-h-screen bg-base-200">
-                <div className="flex flex-col lg:flex-row justify-center items-center w-auto bg-white">
-                    <div className="card flex-shrink-0    bg-base-100">
-                        <div className="card-body">
-                        <h2 className='text-4xl font-bold'>Check Out</h2>
+                <div className="flex flex-col lg:flex-row justify-center items-center w-auto shadow-xl bg-white">
+
+                    {/* Payment Info */}
+
+                    <div className="lg:card lg:flex-shrink-0 w-[90%] lg:w-auto  bg-base-100">
+                        <div className="lg:card-body">
+                            <h2 className='text-4xl font-bold'>Check Out</h2>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -36,7 +39,7 @@ const Checkout = () => {
 
                                 </label>
                             </div>
-                            <div className='flex gap-2'>
+                            <div className='flex flex-col lg:flex-row gap-2'>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Country</span>
@@ -50,27 +53,28 @@ const Checkout = () => {
                                     <input type="text" className="input input-bordered" />
                                 </div>
                             </div>
-                           
-                            <h2 className='mt-1 font-medium'>Payment Mated</h2>
+                            {/* payment method info */}
+                            <h2 className='mt-1 font-medium'>payment method</h2>
                             <img src={bg} className='w-96' alt="" />
-                            <div className="form-control">
+                            <div className="form-control mt-3">
                                 <input type="number" placeholder='Card Number' className="input input-bordered" />
                             </div>
-                            <div className="form-control">
+                            <div className="form-control mt-3">
                                 <input type="text" placeholder='Name on Card' className="input input-bordered" />
                             </div>
-                            <div className='flex gap-2'>
-                                <div className="form-control">
+                            <div className='flex flex-col lg:flex-row'>
+                                <div className="form-control mr-2 mt-3">
                                     <input type="text" placeholder='MM / YY' className="input input-bordered" />
                                 </div>
-                                <div className="form-control">
-                                    <input type="text" placeholder='Security cord' className="input input-bordered" />
+                                <div className="form-control mt-3">
+                                    <input type="text" placeholder='Security cord' className="input input-bordered " />
                                 </div>
                             </div>
-                            <p><input type="checkbox" checked className="checkbox checkbox-xs" /> Remember this card</p>
+                            <p><input type="checkbox" className="checkbox checkbox-xs mt-3" /> Remember this card</p>
                         </div>
                     </div>
 
+                    {/* Product info */}
 
                     <div className="card w-96 bg-base-100 justify-center items-center mb-5 ">
                         <figure className="px-10 pt-10">
@@ -81,14 +85,16 @@ const Checkout = () => {
                             <h2 className="card-title">{name}</h2>
                             <p className='text-justify'>{description}</p>
                             <div className="card-actions">
-                                <button className='btn btn-primary w-full'><input type="radio" class="radio radio-primary btn-outline mr-1" checked />Price only {Price}</button>
+                                <button className='btn btn-primary w-full'><input type="radio" className="radio radio-primary btn-outline mr-1" checked />Price only {Price}</button>
                             </div>
                         </div>
-                        <div className="form-control">
+
+                        {/* Buy info */}
+                        <div className="form-control mb-3">
 
                             <label className="input-group">
                                 <input type="text" placeholder="Voucher Code" className="input input-bordered" />
-                                <span>Apply</span>
+                                <span className="btn btn-secondary">Apply</span>
                             </label>
                         </div>
                         <div className="overflow-x-auto">
@@ -114,7 +120,7 @@ const Checkout = () => {
                                 </tbody>
                             </table>
                         </div>
-                            <button className='btn'>Buy now</button>
+                        <button className='btn'>Buy now</button>
                     </div>
                 </div>
             </div>

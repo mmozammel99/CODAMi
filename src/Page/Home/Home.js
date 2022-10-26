@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import img from '../../Assets/bg.png';
 import img2 from '../../Assets/bg2.svg';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/UserContext';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 
 const Home = () => {
+    const { LoginWithProvider } = useContext(AuthContext)
+    const googleProvider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider()
+
+    const handleGoogleLogin = () => {
+        LoginWithProvider(googleProvider)
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+    const handleGithubLogin = () => {
+        LoginWithProvider(githubProvider)
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
     return (
         <>
             <div className="  min-h-screen bg-base-200 pt-5 ">
@@ -17,8 +41,8 @@ const Home = () => {
                         <Link to='/login' className="btn btn-primary">Start Learning now!</Link>
                         <div className="divider mx-40">OR</div>
                         <div className=' flex flex-col lg:flex-row gap-5 w-72 mx-auto'>
-                            <button className="btn bg-[#D9392B] border-0"><FaGoogle className='text-2xl mr-5' />Google</button>
-                            <button className="btn"><FaGithub className='text-2xl mr-3' />Github</button>
+                            <button onClick={handleGoogleLogin} className="btn bg-[#D9392B] border-0"><FaGoogle className='text-2xl mr-5' />Google</button>
+                            <button onClick={handleGithubLogin} className="btn"><FaGithub className='text-2xl mr-3' />Github</button>
                         </div>
                     </div>
 

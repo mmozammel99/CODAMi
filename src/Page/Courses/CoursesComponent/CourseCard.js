@@ -10,7 +10,7 @@ const CourseCard = ({ course }) => {
                 <figure><img src={img} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}
-                        <div class="badge  badge-lg">{Price}</div></h2>
+                        <div className="badge  badge-lg">{Price}</div></h2>
                     <p>{description}</p>
                     <div className="card-actions flex-col lg:flex-row items-center">
                         <div className='flex gap-16 lg:gap-12 lg:mr-4 ' >
