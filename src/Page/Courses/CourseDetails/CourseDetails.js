@@ -15,13 +15,15 @@ const options = {
 
 const CourseDetails = () => {
     const course = useLoaderData();
-    const { id, name, details, time, video } = course;
+    const { id, name, details, time, video,img } = course;
     const {dark} =useContext(AuthContext);
     return (
         <>
-            <div className={`hero min-h-screen ${dark ? "bg-neutral-focus":"bg-base-200"} ${dark ? "text-gray-100":"text-neutral-focus"}`} >
-                <div ref={ref} className={`hero-content text-center rounded-xl ${dark ? "bg-neutral":"bg-base-100"} ${dark ? "text-gray-100":"text-neutral-focus"}`}  >
-                    <div className="max-w-2xl ">
+            <div className={`hero py-10 min-h-screen ${dark ? "bg-neutral-focus":"bg-base-200"} ${dark ? "text-gray-100":"text-neutral-focus"}`} >
+
+                <div  className={`hero-content text-center rounded-xl flex-col lg:flex-row ${dark ? "bg-neutral":"bg-base-100"} ${dark ? "text-gray-100":"text-neutral-focus"}`}  >
+                        <img src={img} className='mx-auto' alt="" />
+                    <div ref={ref} className={`max-w-2xl ${dark ? "bg-neutral":"bg-base-100"} ${dark ? "text-gray-100":"text-neutral-focus"}`} >
                         <h1 className="text-5xl font-bold">{name}</h1>
                         <div className="divider"></div>
                         <div className='flex justify-between ' >
