@@ -6,16 +6,15 @@ import { AuthContext } from '../../Context/UserContext';
 
 
 const Checkout = () => {
-    const { user, dark } = useContext(AuthContext)
-    const course = useLoaderData()
-    const { name, img, description, Price, logo } = course
+    const { user, dark } = useContext(AuthContext);
+    const course = useLoaderData();
+    const { name, img, description, Price, logo } = course;
 
     const handleBuy = () => {
         toast.custom((t) => (
             <div
                 className={`${t.visible ? 'animate-enter' : 'animate-leave'
-                    } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
-            >
+                    } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`} >
                 <div className="flex-1 w-0 p-4">
                     <div className="flex items-start">
                         <div className="flex-shrink-0 pt-0.5">
@@ -38,14 +37,13 @@ const Checkout = () => {
                 <div className="flex border-l border-gray-200">
                     <button
                         onClick={() => toast.dismiss(t.id)}
-                        className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-primary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary"
-                    >
+                        className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-primary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary">
                         Close
                     </button>
                 </div>
             </div>
         ))
-    }
+    };
     return (
         <>
             <div className={`flex justify-center items-center min-h-screen ${dark ? "bg-neutral-focus" : "bg-base-200"} ${dark ? "text-gray-100" : "text-neutral-focus"}`}>
@@ -62,10 +60,8 @@ const Checkout = () => {
                                 </label>
                                 <input type="text" name='name' defaultValue={user?.displayName} readOnly className="input input-bordered" />
                                 <label className="label">
-
                                 </label>
                             </div>
-
                             <div className="form-control text-neutral-focus">
                                 <label className="label">
                                     <span className={`label-text ${dark ? "text-gray-100" : "text-neutral-focus"}`}>Email</span>
@@ -78,7 +74,6 @@ const Checkout = () => {
                                 </label>
                                 <input type="text" name='uid' defaultValue={user?.uid} readOnly className="input input-bordered" />
                                 <label className="label">
-
                                 </label>
                             </div>
                             <div className='flex flex-col text-neutral-focus lg:flex-row gap-2'>
@@ -120,7 +115,6 @@ const Checkout = () => {
 
                     <div className={`card w-96 bg-base-100 justify-center items-center mb-5 ${dark ? "bg-neutral" : "bg-base-100"} ${dark ? "text-gray-100" : "text-neutral-focus"}`}>
                         <figure className="px-10 pt-10">
-
                             <figure><img src={img} alt="Movie" /></figure>
                         </figure>
                         <div className="card-body items-center text-center">
@@ -140,8 +134,7 @@ const Checkout = () => {
                             </label>
                         </div>
                         <div className="overflow-x-auto ">
-                            <table className="table w-full  text-neutral-focus" >
-
+                            <table className="table w-full  text-neutral-focus">
                                 <tbody>
                                     <tr>
                                         <td>Course Price </td>

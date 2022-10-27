@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
 
 const Profile = () => {
-    const {user, dark} = useContext(AuthContext)
+    const {user, dark} = useContext(AuthContext);
     return (
         <div>
             <div className={`flex flex-col justify-center max-w-xs p-6 shadow-md mx-auto my-72 rounded-xl sm:px-12 ${dark ? "bg-neutral-focus":"bg-base-100"} ${dark ? "text-base-200":"text-neutral-focus"}`}>

@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# CODAMi E-leaner App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was Tailwind DaisyUI with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+CODAMi is a training website for programming and web development. You'll learn by watching premium quality training videos on skills needed for a career in programming. Our videos are streamed in high definition directly on this site. You'll also be provided with exercises and solutions for algorithms and coding challenges. Also included are lessons on how to find the best jobs, interviewing practice and more. When you create a Free account, you get access to over 200 lessons automatically, forever. If you ever decide to upgrade to a Pro account, you'll unlock the entire website, giving you access to hundreds of hours of content and more being added all the time!
 
-### `npm start`
+“_”It's totally responsive web application.
+“_”It's basically a 4-page application.
+“_”It uses dynamic API.
+“_”This site is programmed using Javascript React.
+“_”This site is Designed using Tailwind CSS with daisyUI.
+“_”React Router is used to route it.
+“_”It uses Recharts library to display statistics .
+“_”4 blogs have been added to the blog page
+“_”its use Google Firebase Authentications.
+“_”This site hosting on Google Firebase.
+“_”Server deploy on Vercel.
+“_”Node Express use for create Server Site.
+“_”Added HOT Tost for make interacting.
+“_”Its have vary useFull Dark mode.
+
+# Live Link
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [https://codami.web.app/](https://codami.web.app/) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+## Repo Link
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-mmozammel99](https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-mmozammel99)
 
-### `npm run build`
+## Server Live Link
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[https://server-sit.vercel.app/courses](https://server-sit.vercel.app/courses)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Server Repo Link
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[ https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-mmozammel99](https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-mmozammel99)
 
-### `npm run eject`
+### Framework used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Java Script React + Tailwind css with daisyUI + Google Firebase + Node Express + vercel
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Code Type
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The codes are made very simple and easy for Humans to understand
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## packages list
 
-## Learn More
+version: 0.1.0
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "daisyui": "^2.33.0",
+    "firebase": "^9.12.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.0",
+    "react-icons": "^4.6.0",
+    "react-router-dom": "^6.4.2",
+    "react-scripts": "5.0.1",
+    "react-to-pdf": "^0.0.14",
+    "theme-change": "^2.2.0",
+    "web-vitals": "^2.1.4"
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Server api
 
-### Code Splitting
+Get all Corses topics:https://server-sit.vercel.app/courses
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Get Corse details by Corse id: https://server-sit.vercel.app/courses/${id}
 
-### Analyzing the Bundle Size
+Example: ttps://server-sit.vercel.app/courses/1
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Credits
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thanks, Programming hero hold team for guiding us

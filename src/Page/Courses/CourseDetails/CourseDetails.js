@@ -14,9 +14,9 @@ const options = {
 };
 
 const CourseDetails = () => {
-    const course = useLoaderData()
-    const { id, name, details, time, video } = course
-    const {dark} =useContext(AuthContext)
+    const course = useLoaderData();
+    const { id, name, details, time, video } = course;
+    const {dark} =useContext(AuthContext);
     return (
         <>
             <div className={`hero min-h-screen ${dark ? "bg-neutral-focus":"bg-base-200"} ${dark ? "text-gray-100":"text-neutral-focus"}`} >

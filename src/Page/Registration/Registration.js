@@ -6,22 +6,22 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
 
 const Registration = () => {
-    const { createUser, LoginWithProvider, addUserInfo, emailVerify } = useContext(AuthContext)
-    const [error, setError] = useState(null)
+    const { createUser, LoginWithProvider, addUserInfo, emailVerify } = useContext(AuthContext);
+    const [error, setError] = useState(null);
 
-    const googleProvider = new GoogleAuthProvider()
-    const githubProvider = new GithubAuthProvider()
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
-    const navigate = useNavigate()
-    const location = useLocation()
+    const navigate = useNavigate();
+    const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
     const handleGoogleLogin = () => {
         LoginWithProvider(googleProvider)
             .then(result => {
                 console.log(result);
-                toast.success('Registration Successful')
-                navigate(from, { replace: true })
+                toast.success('Registration Successful');
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.error(error);
@@ -31,8 +31,8 @@ const Registration = () => {
         LoginWithProvider(githubProvider)
             .then(result => {
                 console.log(result);
-                toast.success('Registration Successful')
-                navigate(from, { replace: true })
+                toast.success('Registration Successful');
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.error(error);
@@ -51,17 +51,18 @@ const Registration = () => {
         createUser(email, password)
             .then(result => {
                 handleProfileInfoAdd(name, photoURL);
-                emailVerify()
-                setError(null)
-                toast.success('Registration Successful')
-                navigate(from, { replace: true })
+                emailVerify();
+                setError(null);
+                toast.success('Registration Successful');
+                toast.error('Please Verify your Email');
+                navigate(from, { replace: true });
                 console.log(result.user);
             })
             .catch(error => {
                 console.error(error);
-                setError(error.message)
+                setError(error.message);
             })
-    }
+    };
     const handleProfileInfoAdd = (name, photoURL) => {
         const profile = {
             displayName: name,
@@ -69,7 +70,7 @@ const Registration = () => {
         }
         addUserInfo(profile)
             .then(() => { })
-    }
+    };
     return (
         <>
             <div className=" h-auto  bg-base-200 flex flex-col gap-10 justify-center items-center py-4 ">

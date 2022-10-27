@@ -6,21 +6,21 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
 
 const Login = () => {
-    const { login, LoginWithProvider, setLoader } = useContext(AuthContext)
-    const [error, setError] = useState(null)
+    const { login, LoginWithProvider, setLoader } = useContext(AuthContext);
+    const [error, setError] = useState(null);
 
-    const googleProvider = new GoogleAuthProvider()
-    const githubProvider = new GithubAuthProvider()
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
-    const navigate = useNavigate()
-    const location = useLocation()
+    const navigate = useNavigate();
+    const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
     const handleGoogleLogin = () => {
         LoginWithProvider(googleProvider)
             .then(result => {
-                 toast.success('Successfully Login!')
-                navigate(from, { replace: true })
+                 toast.success('Successfully Login!');
+                navigate(from, { replace: true });
                 console.log(result);
             })
             .catch(error => {
@@ -30,8 +30,8 @@ const Login = () => {
     const handleGithubLogin = () => {
         LoginWithProvider(githubProvider)
             .then(result => {
-                toast.success('Successfully Login!')
-                navigate(from, { replace: true })
+                toast.success('Successfully Login!');
+                navigate(from, { replace: true });
                 console.log(result);
             })
             .catch(error => {
@@ -48,18 +48,18 @@ const Login = () => {
         console.log(email, password);
         login(email, password)
             .then(result => {
-                setError(null)
+                setError(null);
                 console.log(result.user);
-                toast.success('Successfully Login!')
-                navigate(from, { replace: true })
+                toast.success('Successfully Login!');
+                navigate(from, { replace: true });
 
             })
             .catch(error => {
                 setError(error.message);
-                console.error(error)
+                console.error(error);
             })
             .finally(() => {
-                setLoader(false)
+                setLoader(false);
             })
 
     }

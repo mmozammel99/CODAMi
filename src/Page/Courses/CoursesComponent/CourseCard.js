@@ -4,7 +4,7 @@ import { ImBooks } from "react-icons/im";
 import { Link } from 'react-router-dom';
 
 const CourseCard = ({ course }) => {
-    const {id, name, img, description, time, Price, video } = course
+    const { id, name, img, description, time, Price, video } = course;
 
     return (
         <div>
@@ -19,7 +19,7 @@ const CourseCard = ({ course }) => {
                             <p className='flex  items-center gap-1'><FaRegClock />{time}</p>
                             <p className='flex  items-center gap-1'><ImBooks />{video}</p>
                         </div>
-                        <Link to={`/course/${id} `}className="btn btn-primary">Learn more</Link>
+                        <Link to={`/course/${id} `} className="btn btn-primary">Learn more</Link>
                     </div>
                 </div>
             </div>

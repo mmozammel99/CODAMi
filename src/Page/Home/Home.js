@@ -8,9 +8,9 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 
 const Home = () => {
-    const { LoginWithProvider, dark } = useContext(AuthContext)
-    const googleProvider = new GoogleAuthProvider()
-    const githubProvider = new GithubAuthProvider()
+    const { LoginWithProvider, dark } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const handleGoogleLogin = () => {
         LoginWithProvider(googleProvider)
@@ -18,21 +18,21 @@ const Home = () => {
                 console.log(result.user);
             })
             .catch(error => {
-                console.error(error)
+                console.error(error);
             })
-    }
+    };
     const handleGithubLogin = () => {
         LoginWithProvider(githubProvider)
             .then(result => {
                 console.log(result.user);
             })
             .catch(error => {
-                console.error(error)
+                console.error(error);
             })
-    }
+    };
     return (
         <>
-            <div className= {` min-h-screen  pt-5 ${dark ? "bg-neutral-focus":"bg-base-100"} ${dark ? "text-base-200":"text-neutral-focus"}`} >
+            <div className= {` min-h-screen  pt-5 ${dark ? "bg-neutral-focus":"bg-base-200"} ${dark ? "text-base-200":"text-neutral-focus"}`} >
                 <div className=" flex flex-col-reverse lg:flex-row  text-center justify-center items-center px-20">
                     <img alt='' src={img} className="w-96 lg:w-[40%]  mx-20" />
                     <div className=' '>
@@ -45,7 +45,6 @@ const Home = () => {
                             <button onClick={handleGithubLogin} className="btn"><FaGithub className='text-2xl mr-3' />Github</button>
                         </div>
                     </div>
-
                 </div>
                 <img src={img2} className="mx-5" alt="" />
             </div>

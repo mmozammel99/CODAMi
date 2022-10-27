@@ -5,8 +5,8 @@ import CourseCard from './CoursesComponent/CourseCard';
 import CourseSidebar from './CoursesComponent/CourseSidebar';
 
 const Courses = () => {
-    const courses = useLoaderData()
-    const {dark} =useContext(AuthContext)
+    const courses = useLoaderData();
+    const {dark} =useContext(AuthContext);
     return (
         <>
             <div className={`flex flex-col lg:flex-row ${dark ? "bg-neutral-focus":"bg-base-200"} ${dark ? "text-base-200":"text-neutral-focus"}`}>
@@ -17,8 +17,7 @@ const Courses = () => {
                             course={course}
                         ></CourseSidebar>)
                     }
-                </div>
-                
+                </div>               
                 <div className='flex flex-wrap justify-center items-center gap-10 py-5 '>
                 {
                         courses.map(course => <CourseCard
@@ -27,7 +26,6 @@ const Courses = () => {
                         ></CourseCard>)
                     }
                 </div>
-               
             </div>
         </>
     );
