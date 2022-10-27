@@ -6,7 +6,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
 
 const Login = () => {
-    const { login, LoginWithProvider, setLoader } = useContext(AuthContext);
+    const { login, LoginWithProvider, setLoader, dark } = useContext(AuthContext);
     const [error, setError] = useState(null);
 
     const googleProvider = new GoogleAuthProvider();
@@ -65,23 +65,23 @@ const Login = () => {
     }
     return (
         <>
-            <div className=" h-screen bg-base-200 flex flex-col gap-10 justify-center items-center ">
+            <div className= {`h-screen  flex flex-col gap-10 justify-center items-center ${dark ? "bg-neutral-focus" : "bg-base-200"} ${dark ? "text-base-200" : "text-neutral-focus"}`} >
                 <h1 className="text-5xl font-bold">Login now!</h1>
-                <div className="card flex-shrink-0 w-[90%] md:w-[60%] lg:w-[30%]  bg-base-100 shadow-xl ">
+                <div className={`card flex-shrink-0 w-[90%] md:w-[60%] lg:w-[30%]  shadow-xl ${dark ? "bg-neutral" : "bg-base-100"} ${dark ? "text-base-100" : "text-neutral-focus"}`} >
                     <form onSubmit={handleEmailWithLogin} className="card-body">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className={`label-text ${dark ? "text-base-100" : "text-neutral-focus"}`}>Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                            <input type="email" name='email' placeholder="email" className='input input-bordered text-neutral-focus' required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className={`label-text ${dark ? "text-base-100" : "text-neutral-focus"}`}>Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered text-neutral-focus" required />
                             <label className="label">
-                                <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
+                                <Link href="#" className={`label-text-alt link link-hover ${dark ? "text-base-100" : "text-neutral-focus"}`}>Forgot password?</Link>
                             </label>
                         </div>
                         <p className='text-error' >{error}</p>

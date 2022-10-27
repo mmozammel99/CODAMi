@@ -6,7 +6,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
 
 const Registration = () => {
-    const { createUser, LoginWithProvider, addUserInfo, emailVerify } = useContext(AuthContext);
+    const { createUser, LoginWithProvider, addUserInfo, emailVerify,dark } = useContext(AuthContext);
     const [error, setError] = useState(null);
 
     const googleProvider = new GoogleAuthProvider();
@@ -73,33 +73,33 @@ const Registration = () => {
     };
     return (
         <>
-            <div className=" h-auto  bg-base-200 flex flex-col gap-10 justify-center items-center py-4 ">
+            <div className= {`h-auto  flex flex-col gap-10 justify-center items-center py-4 ${dark ? "bg-neutral-focus" : "bg-base-200"} ${dark ? "text-base-200" : "text-neutral-focus"}`}>
                 <h1 className="text-5xl font-bold ">Registration</h1>
-                <div className="card flex-shrink-0 w-[90%] md:w-[60%] lg:w-[35%]  bg-base-100 shadow-xl  ">
-                    <form onSubmit={handleCreateUser} className="card-body">
+                <div className={`card flex-shrink-0 w-[90%] md:w-[60%] lg:w-[35%]  bg-base-100 shadow-xl rounded-none  ${dark ? "rounded-none" : "rounded-xl"}`} >
+                    <form onSubmit={handleCreateUser} className={`card-body  ${dark ? "bg-neutral" : "bg-base-100"} ${dark ? "text-base-100" : "text-neutral-focus"} `}>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Full Name</span>
+                                <span className={`label-text ${dark ? "text-base-100" : "text-neutral-focus"}`}>Full Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="Name" className="input input-bordered" required />
+                            <input type="text" name='name' placeholder="Name" className="input input-bordered text-neutral-focus" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Photo url</span>
+                                <span className={`label-text ${dark ? "text-base-100" : "text-neutral-focus"}`}>Photo url</span>
                             </label>
-                            <input type="url" name='photoURL' placeholder="Photo url" className="input input-bordered" required />
+                            <input type="url" name='photoURL' placeholder="Photo url" className="input input-bordered text-neutral-focus" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className={`label-text ${dark ? "text-base-100" : "text-neutral-focus"}`}>Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                            <input type="email" name='email' placeholder="email" className="input input-bordered text-neutral-focus" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className={`label-text ${dark ? "text-base-100" : "text-neutral-focus"}`}>Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered text-neutral-focus" required />
 
                         </div>
                         <p className='text-error'>{error}</p>

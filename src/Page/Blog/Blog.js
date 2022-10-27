@@ -7,7 +7,7 @@ import { AuthContext } from '../../Context/UserContext';
 const Blog = () => {
     const { dark } = useContext(AuthContext);
     return (
-        <div className={`${dark ? "bg-neutral-focus" : "bg-base-200"} ${dark ? "text-base-200" : "text-neutral-focus"}`}>
+        <div className={`${dark ? "bg-neutral-focus" : "bg-base-200"} ${dark ? "text-base-200" : "text-neutral-focus"} pb-10 text-justify`}>
             <h2 className="text-5xl font-bold text-center pt-5 mb-5">BLOG</h2>
             <div className={`container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm ${dark ? "bg-neutral" : "bg-base-100"} ${dark ? "text-gray-100" : "text-neutral-focus"} mb-10 `}>
                 <div className="flex items-center justify-between">

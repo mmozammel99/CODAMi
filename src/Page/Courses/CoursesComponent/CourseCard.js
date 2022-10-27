@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const CourseCard = ({ course }) => {
     const { id, name, img, description, time, Price, video } = course;
-
+    
     return (
         <div>
             <div className='card card-compact w-80 lg:w-96 shadow-xl '>

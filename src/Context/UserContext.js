@@ -9,7 +9,16 @@ const auth = getAuth(app);
 const UserContext = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loader, setLoader] = useState(true);
-    const [dark, setDark] = useState(false);
+
+    
+    const [dark, setDark] = useState((JSON.parse(localStorage.getItem('mod')))||false);
+
+  
+    localStorage.setItem('mod',(dark))
+
+    
+
+
     const createUser = (email, password) => {
         setLoader(true);
         return createUserWithEmailAndPassword(auth, email, password);

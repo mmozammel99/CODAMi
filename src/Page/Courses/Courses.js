@@ -7,6 +7,7 @@ import CourseSidebar from './CoursesComponent/CourseSidebar';
 const Courses = () => {
     const courses = useLoaderData();
     const {dark} =useContext(AuthContext);
+    
     return (
         <>
             <div className={`flex flex-col lg:flex-row ${dark ? "bg-neutral-focus":"bg-base-200"} ${dark ? "text-base-200":"text-neutral-focus"}`}>
