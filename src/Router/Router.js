@@ -12,6 +12,7 @@ import CourseDetails from '../Page/Courses/CourseDetails/CourseDetails';
 import Checkout from '../Page/Checkout/Checkout';
 import PrivetRouter from './PrivetRouter/PrivetRouter';
 import Profile from '../Page/Profile/Profile';
+import PaymentComplete from '../Page/Checkout/PaymentComplete';
 
 export const router = createBrowserRouter([
     {
@@ -63,6 +64,10 @@ export const router = createBrowserRouter([
                 loader: ({params})=> fetch(`https://server-sit.vercel.app/courses/${params.id}`)
             },
         ]
+    },
+    {
+        path:'/payment-complete',
+        element:<PaymentComplete></PaymentComplete>
     },
     {
         path:'/*',

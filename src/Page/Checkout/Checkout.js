@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import bg from '../../Assets/Payment-Methods.png'
 import { AuthContext } from '../../Context/UserContext';
 
@@ -131,7 +131,7 @@ const Checkout = () => {
                         <div className="form-control mb-3">
 
                             <label className="input-group">
-                                <input type="text" placeholder="Voucher Code" className="input input-bordered text-neutral-focus text-neutral-focus" />
+                                <input type="text" placeholder="Voucher Code" className="input input-bordered text-neutral-focus " />
                                 <span className="btn btn-primary">Apply</span>
                             </label>
                         </div>
@@ -161,7 +161,7 @@ const Checkout = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <button className={`btn my-3 ${dark?"btn-primary": ""}`} onClick={handleBuy}>Buy now</button>
+                        <Link to='/payment-complete' className={`btn my-3 ${dark?"btn-primary": ""}`} onClick={handleBuy}>Buy now</Link>
                     </div>
                 </div>
             </div>

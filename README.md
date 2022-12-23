@@ -4,22 +4,22 @@ This project was Tailwind DaisyUI with [Create React App](https://github.com/fac
 
 ## Description
 
-CODAMi is a training website for programming and web development. You'll learn by watching premium quality training videos on skills needed for a career in programming. Our videos are streamed in high definition directly on this site. You'll also be provided with exercises and solutions for algorithms and coding challenges. Also included are lessons on how to find the best jobs, interviewing practice and more. When you create a Free account, you get access to over 200 lessons automatically, forever. If you ever decide to upgrade to a Pro account, you'll unlock the entire website, giving you access to hundreds of hours of content and more being added all the time!
+It is an online-based e-learning web application. It is based on the course selling method. It's a totally responsive and dynamic web website. It has a very useful dark mood and HTML to PDF conversion and download system. Used Tailwind CSS for styling, and implemented a responsive design for mobile devices. It implements a MongoDB database to store data and uses Tailwind CSS-based daisyUI components for the design. selling. It uses google firebase authentication and JWT. token for security.
 
-“_”It's totally responsive web application.
-“_”It's basically a 4-page application.
-“_”It uses dynamic API.
-“_”This site is programmed using Javascript React.
-“_”This site is Designed using Tailwind CSS with daisyUI.
-“_”React Router is used to route it.
-“_”It uses Recharts library to display statistics .
-“_”4 blogs have been added to the blog page
-“_”its use Google Firebase Authentications.
-“_”This site hosting on Google Firebase.
-“_”Server deploy on Vercel.
-“_”Node Express use for create Server Site.
-“_”Added HOT Tost for make interacting.
-“_”Its have vary useFull Dark mode.
+*It's totally responsive web application.
+*It's basically a 4-page application.
+*It uses dynamic API.
+*This site is programmed using Javascript React.
+*This site is Designed using Tailwind CSS with daisyUI.
+*React Router is used to route it.
+*It uses Recharts library to display statistics .
+*4 blogs have been added to the blog page
+*its use Google Firebase Authentications.
+*This site hosting on Google Firebase.
+*Server deploy on Vercel.
+*Node Express use for create Server Site.
+*Added HOT Tost for make interacting.
+*Its have vary useFull Dark mode.
 
 # Live Link
 
@@ -31,7 +31,7 @@ You may also see any lint errors in the console.
 
 ## Repo Link
 
-[https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-mmozammel99](https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-mmozammel99)
+[https://github.com/mozammel787/CODAMi](https://github.com/mozammel787/CODAMi)
 
 ## Server Live Link
 
@@ -39,7 +39,7 @@ You may also see any lint errors in the console.
 
 ## Server Repo Link
 
-[ https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-mmozammel99](https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-mmozammel99)
+[ https://github.com/mozammel787/CODAMi-server](https://github.com/mozammel787/CODAMi-server)
 
 ### Framework used
 
