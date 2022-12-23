@@ -6,20 +6,20 @@ This project was Tailwind DaisyUI with [Create React App](https://github.com/fac
 
 It is an online-based e-learning web application. It is based on the course selling method. It's a totally responsive and dynamic web website. It has a very useful dark mood and HTML to PDF conversion and download system. Used Tailwind CSS for styling, and implemented a responsive design for mobile devices. It implements a MongoDB database to store data and uses Tailwind CSS-based daisyUI components for the design. selling. It uses google firebase authentication and JWT. token for security.
 
-*It's totally responsive web application.
-*It's basically a 4-page application.
-*It uses dynamic API.
-*This site is programmed using Javascript React.
-*This site is Designed using Tailwind CSS with daisyUI.
-*React Router is used to route it.
-*It uses Recharts library to display statistics .
-*4 blogs have been added to the blog page
-*its use Google Firebase Authentications.
-*This site hosting on Google Firebase.
-*Server deploy on Vercel.
-*Node Express use for create Server Site.
-*Added HOT Tost for make interacting.
-*Its have vary useFull Dark mode.
+* It's totally responsive web application.
+* It's basically a 4-page application.
+* It uses dynamic API.
+* This site is programmed using Javascript React.
+* This site is Designed using Tailwind CSS with daisyUI.
+* React Router is used to route it.
+* It uses Recharts library to display statistics .
+* 4 blogs have been added to the blog page
+* its use Google Firebase Authentications.
+* This site hosting on Google Firebase.
+* Server deploy on Vercel.
+* Node Express use for create Server Site.
+* Added HOT Tost for make interacting.
+* Its have vary useFull Dark mode.
 
 # Live Link
 
