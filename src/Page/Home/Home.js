@@ -34,6 +34,7 @@ const Home = () => {
                 console.error(error);
             })
     };
+    
     return (
         <>
             <div className={` min-h-screen  pt-5 ${dark ? "bg-neutral-focus" : "bg-base-200"} ${dark ? "text-base-200" : "text-neutral-focus"}`} >
@@ -51,7 +52,7 @@ const Home = () => {
                     </div>
                 </div>
                 <img src={img2} className="mx-5" alt="" />
-                <div className="p-6 py-12 bg-blue-600 text-gray-50">
+                <div className="p-6 py-12 bg-primary text-gray-50">
                     <div className="container mx-auto">
                         <div className="flex flex-col lg:flex-row items-center justify-between">
                             <h2 className="text-center text-6xl tracking-tighter font-bold">Up to
